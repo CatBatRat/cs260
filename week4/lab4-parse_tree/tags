@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CFLAGS	makefile	/^CFLAGS=-Wall -Wextra -Werror$/;"	m
+CPP	makefile	/^CPP=clang++$/;"	m
+Left	ParseTree.h	/^  ParseNode *Left() { return left; }$/;"	f	class:ParseNode
+Left	ParseTree.h	/^  void Left(ParseNode *l) { left = l; }$/;"	f	class:ParseNode
+PARSETREE_H	ParseTree.h	/^#define PARSETREE_H$/;"	d
+ParseNode	ParseTree.h	/^  ParseNode(char v, ParseNode *l = nullptr, ParseNode *r = nullptr)$/;"	f	class:ParseNode
+ParseNode	ParseTree.h	/^class ParseNode {$/;"	c
+ParseTree	ParseTree.cpp	/^ParseTree::ParseTree(std::string expression) {$/;"	f	class:ParseTree
+ParseTree	ParseTree.h	/^class ParseTree {$/;"	c
+Right	ParseTree.h	/^  ParseNode *Right() { return right; }$/;"	f	class:ParseNode
+Right	ParseTree.h	/^  void Right(ParseNode *r) { right = r; }$/;"	f	class:ParseNode
+all	makefile	/^all=$(header) $(cpp)$/;"	m
+buffer	ParseTree.h	/^  std::string buffer;$/;"	m	class:ParseTree
+comp	makefile	/^comp=$(cpp) -o $(out)$/;"	m
+cpp	makefile	/^cpp=main.cpp ParseTree.cpp$/;"	m
+doParse	ParseTree.cpp	/^ParseNode *ParseTree::doParse(std::string exp) {$/;"	f	class:ParseTree
+getValue	ParseTree.h	/^  char getValue() { return value; }$/;"	f	class:ParseNode
+header	makefile	/^header=ParseTree.h$/;"	m
+inOrder	ParseTree.cpp	/^std::string ParseTree::inOrder() {$/;"	f	class:ParseTree
+isOperand	ParseTree.cpp	/^bool ParseTree::isOperand(char value) {$/;"	f	class:ParseTree
+isOperator	ParseTree.cpp	/^bool ParseTree::isOperator(char value) {$/;"	f	class:ParseTree
+left	ParseTree.h	/^  ParseNode *left;$/;"	m	class:ParseNode
+main	main.cpp	/^int main() {$/;"	f
+out	makefile	/^out=double-link.exe$/;"	m
+postOrder	ParseTree.cpp	/^std::string ParseTree::postOrder() { return recPostOrder(root); }$/;"	f	class:ParseTree
+preOrder	ParseTree.cpp	/^std::string ParseTree::preOrder() { return recPreOrder(root); }$/;"	f	class:ParseTree
+recDestruct	ParseTree.cpp	/^void ParseTree::recDestruct(ParseNode *ptr) {$/;"	f	class:ParseTree
+recInOrder	ParseTree.cpp	/^std::string ParseTree::recInOrder(ParseNode *ptr) {$/;"	f	class:ParseTree
+recPostOrder	ParseTree.cpp	/^std::string ParseTree::recPostOrder(ParseNode *ptr) {$/;"	f	class:ParseTree
+recPreOrder	ParseTree.cpp	/^std::string ParseTree::recPreOrder(ParseNode *ptr) {$/;"	f	class:ParseTree
+right	ParseTree.h	/^  ParseNode *right;$/;"	m	class:ParseNode
+root	ParseTree.h	/^  ParseNode *root;$/;"	m	class:ParseTree
+value	ParseTree.h	/^  char value;$/;"	m	class:ParseNode
+~ParseTree	ParseTree.cpp	/^ParseTree::~ParseTree() { recDestruct(root); }$/;"	f	class:ParseTree

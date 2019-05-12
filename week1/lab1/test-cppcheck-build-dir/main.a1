@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="2120309632">
+        <error id="noCopyConstructor" severity="style" msg="Class &apos;TheArray &lt; int &gt;&apos; does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s)." verbose="Class &apos;TheArray &lt; int &gt;&apos; does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s)." cwe="398">
+            <location file0="C:\Users\Keenath\lcc\cis260\week1\lab1\main.cpp" file="C:\Users\Keenath\lcc\cis260\week1\lab1\TheArray.hpp" line="109"/>
+            <symbol>TheArray &lt; int &gt;</symbol>
+        </error>
+        <error id="noOperatorEq" severity="style" msg="Class &apos;TheArray &lt; int &gt;&apos; does not have a operator= which is recommended since it has dynamic memory/resource allocation(s)." verbose="Class &apos;TheArray &lt; int &gt;&apos; does not have a operator= which is recommended since it has dynamic memory/resource allocation(s)." cwe="398">
+            <location file0="C:\Users\Keenath\lcc\cis260\week1\lab1\main.cpp" file="C:\Users\Keenath\lcc\cis260\week1\lab1\TheArray.hpp" line="109"/>
+            <symbol>TheArray &lt; int &gt;</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;TheArray &lt; int &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;TheArray &lt; int &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\Keenath\lcc\cis260\week1\lab1\main.cpp" file="C:\Users\Keenath\lcc\cis260\week1\lab1\TheArray.hpp" line="25"/>
+            <symbol>TheArray &lt; int &gt;</symbol>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="main" lineNumber="22"/>
+    <functioncall functionName="DEF_SIZE"/>
+    <functioncall functionName="OVERLOAD"/>
+    <functioncall functionName="START"/>
+    <functioncall functionName="TheArray &lt; int &gt;"/>
+    <functioncall functionName="UPDATE"/>
+    <functioncall functionName="append"/>
+    <functioncall functionName="bounds"/>
+    <functioncall functionName="catch"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="decrease"/>
+    <functioncall functionName="defineSize"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="getAt"/>
+    <functioncall functionName="getSize"/>
+    <functioncall functionName="i"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="ifError"/>
+    <functioncall functionName="increase"/>
+    <functioncall functionName="index"/>
+    <functioncall functionName="insertAt"/>
+    <functioncall functionName="n"/>
+    <functioncall functionName="newSize"/>
+    <functioncall functionName="out_of_range"/>
+    <functioncall functionName="removeAt"/>
+    <functioncall functionName="room"/>
+    <functioncall functionName="s"/>
+    <functioncall functionName="setAt"/>
+    <functioncall functionName="setGet"/>
+    <functioncall functionName="setSize"/>
+    <functioncall functionName="swapper"/>
+    <functioncall functionName="temp"/>
+    <functioncall functionName="what"/>
+    <functioncall functionName="while"/>
+    <functioncall functionName="x"/>
+  </FileInfo>
+</analyzerinfo>

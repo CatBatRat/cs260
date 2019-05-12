@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Node	Tree.h	/^  Node(int v)$/;"	f	class:Node
+Node	Tree.h	/^class Node {$/;"	c
+SPACE	Tree.h	/^  static const int SPACE = 8;$/;"	m	class:Tree
+Tree	Tree.cpp	/^Tree::Tree() { root = nullptr; }$/;"	f	class:Tree
+Tree	Tree.h	/^class Tree {$/;"	c
+Tree_h	Tree.h	/^#define Tree_h$/;"	d
+addNode	Tree.cpp	/^void Tree::addNode(int value) {$/;"	f	class:Tree
+deleteMark	Tree.cpp	/^bool Tree::deleteMark(int value) {$/;"	f	class:Tree
+deleteRemove	Tree.cpp	/^bool Tree::deleteRemove(int value) {$/;"	f	class:Tree
+displayTree	Tree.cpp	/^std::string Tree::displayTree() { return recDisplay(root, 0); }$/;"	f	class:Tree
+find	Tree.cpp	/^bool Tree::find(int value) { return recFind(value, root); }$/;"	f	class:Tree
+inOrder	Tree.cpp	/^std::string Tree::inOrder() { return recInOrder(root); }$/;"	f	class:Tree
+left	Tree.h	/^  Node *left;$/;"	m	class:Node
+main	main.cpp	/^int main() {$/;"	f
+minValueNode	Tree.cpp	/^Node *Tree::minValueNode(Node *ptr) {$/;"	f	class:Tree
+parent	Tree.h	/^  Node *parent;$/;"	m	class:Node
+postOrder	Tree.cpp	/^std::string Tree::postOrder() { return recPostOrder(root); }$/;"	f	class:Tree
+preOrder	Tree.cpp	/^std::string Tree::preOrder() { return recPreOrder(root); }$/;"	f	class:Tree
+present	Tree.h	/^  bool present;$/;"	m	class:Node
+recDelete	Tree.cpp	/^Node *Tree::recDelete(Node *ptr, int value) {$/;"	f	class:Tree
+recDestruct	Tree.cpp	/^void Tree::recDestruct(Node *ptr) {$/;"	f	class:Tree
+recDisplay	Tree.cpp	/^std::string Tree::recDisplay(Node *ptr, int space) {$/;"	f	class:Tree
+recFind	Tree.cpp	/^bool Tree::recFind(int value, Node *ptr) {$/;"	f	class:Tree
+recInOrder	Tree.cpp	/^std::string Tree::recInOrder(Node *ptr) {$/;"	f	class:Tree
+recPostOrder	Tree.cpp	/^std::string Tree::recPostOrder(Node *ptr) {$/;"	f	class:Tree
+recPreOrder	Tree.cpp	/^std::string Tree::recPreOrder(Node *ptr) {$/;"	f	class:Tree
+right	Tree.h	/^  Node *right;$/;"	m	class:Node
+root	Tree.h	/^  Node *root;$/;"	m	class:Tree
+value	Tree.h	/^  int value;$/;"	m	class:Node
+~Tree	Tree.cpp	/^Tree::~Tree() { recDestruct(root); }$/;"	f	class:Tree

@@ -1,0 +1,73 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Append_test	main.cpp	/^#define Append_test$/;"	d	file:
+Iter_test	main.cpp	/^#define Iter_test$/;"	d	file:
+List_h	TextClass.hpp	/^#define List_h$/;"	d
+Ltr	TextClass.hpp	/^  Ltr(T v, Ltr *n = nullptr, Ltr *p = nullptr) : value(v), next(n), prev(p) {}$/;"	f	class:Ltr
+Ltr	TextClass.hpp	/^template <class T> class Ltr {$/;"	c
+Student	Student.hpp	/^  Student(std::string name, int age)$/;"	f	class:Student
+Student	Student.hpp	/^class Student {$/;"	c
+StudentLink	StudentList.hpp	/^  StudentLink(Student *s = nullptr, StudentLink *n = nullptr)$/;"	f	class:StudentLink
+StudentLink	StudentList.hpp	/^class StudentLink {$/;"	c
+StudentList	StudentList.hpp	/^  StudentList() { head = tail = nullptr; }$/;"	f	class:StudentList
+StudentList	StudentList.hpp	/^class StudentList {$/;"	c
+StudentList_test	main.cpp	/^#define StudentList_test$/;"	d	file:
+TextClass	TextClass.hpp	/^TextClass<T>::TextClass() : head(nullptr), tail(nullptr), iter(nullptr) {}$/;"	f	class:TextClass
+TextClass	TextClass.hpp	/^template <class T> class TextClass {$/;"	c
+TextClass_test	main.cpp	/^#define TextClass_test$/;"	d	file:
+__STUDENT_LIST__	StudentList.hpp	/^#define __STUDENT_LIST__$/;"	d
+__STUDENT__	Student.hpp	/^#define __STUDENT__$/;"	d
+age	Student.hpp	/^  int age;$/;"	m	class:Student
+appendList	TextClass.hpp	/^template <class T> bool TextClass<T>::appendList(TextClass<T> &aList) {$/;"	f	class:TextClass
+args	makefile	/^args=-Wall -Wextra$/;"	m
+comp	makefile	/^comp=$(args) $(cpp) -o $(out)$/;"	m
+cpp	makefile	/^cpp=main.cpp StudentList.cpp$/;"	m
+deleteHead	StudentList.cpp	/^Student *StudentList::deleteHead() {$/;"	f	class:StudentList
+deleteHead	TextClass.hpp	/^template <class T> T TextClass<T>::deleteHead() {$/;"	f	class:TextClass
+deleteIter	TextClass.hpp	/^template <class T> bool TextClass<T>::deleteIter() {$/;"	f	class:TextClass
+deleteKey	StudentList.cpp	/^bool StudentList::deleteKey(std::string key) {$/;"	f	class:StudentList
+deleteKey	TextClass.hpp	/^template <class T> bool TextClass<T>::deleteKey(T value) {$/;"	f	class:TextClass
+deleteTail	TextClass.hpp	/^template <class T> T TextClass<T>::deleteTail() {$/;"	f	class:TextClass
+displayList	TextClass.hpp	/^template <class T> std::string TextClass<T>::displayList() {$/;"	f	class:TextClass
+findIter	TextClass.hpp	/^template <class T> bool TextClass<T>::findIter(T value) {$/;"	f	class:TextClass
+findKey	StudentList.cpp	/^bool StudentList::findKey(std::string key) {$/;"	f	class:StudentList
+findKey	TextClass.hpp	/^template <class T> bool TextClass<T>::findKey(T value) {$/;"	f	class:TextClass
+getAge	Student.hpp	/^  int getAge() { return this->age; }$/;"	f	class:Student
+getHead	TextClass.hpp	/^  Ltr<T> *getHead() { return head; }$/;"	f	class:TextClass
+getName	Student.hpp	/^  std::string getName() { return this->name; }$/;"	f	class:Student
+getNext	StudentList.hpp	/^  StudentLink *getNext() { return next; }$/;"	f	class:StudentLink
+getNext	TextClass.hpp	/^  Ltr *getNext() { return next; }$/;"	f	class:Ltr
+getPrev	TextClass.hpp	/^  Ltr *getPrev() { return prev; }$/;"	f	class:Ltr
+getStudent	StudentList.hpp	/^  Student *getStudent() { return student; }$/;"	f	class:StudentLink
+getTail	TextClass.hpp	/^  Ltr<T> *getTail() { return head; }$/;"	f	class:TextClass
+getValue	TextClass.hpp	/^  T getValue() { return value; }$/;"	f	class:Ltr
+head	StudentList.hpp	/^  StudentLink *head;$/;"	m	class:StudentList
+head	TextClass.hpp	/^  Ltr<T> *head;$/;"	m	class:TextClass
+insertHead	StudentList.cpp	/^void StudentList::insertHead(Student *stu) {$/;"	f	class:StudentList
+insertHead	TextClass.hpp	/^template <class T> void TextClass<T>::insertHead(T value) {$/;"	f	class:TextClass
+insertKey	TextClass.hpp	/^template <class T> bool TextClass<T>::insertKey(T value) {$/;"	f	class:TextClass
+insertTail	StudentList.cpp	/^void StudentList::insertTail(Student *stu) {$/;"	f	class:StudentList
+insertTail	TextClass.hpp	/^template <class T> void TextClass<T>::insertTail(T value) {$/;"	f	class:TextClass
+isEmpty	StudentList.hpp	/^  bool isEmpty() { return (head == nullptr) ? true : false; }$/;"	f	class:StudentList
+iter	TextClass.hpp	/^  Ltr<T> *iter;$/;"	m	class:TextClass
+main	main.cpp	/^int main() {$/;"	f
+name	Student.hpp	/^  std::string name;$/;"	m	class:Student
+next	StudentList.hpp	/^  StudentLink *next;$/;"	m	class:StudentLink
+next	TextClass.hpp	/^  Ltr *next;$/;"	m	class:Ltr
+out	makefile	/^out=double-link.exe$/;"	m
+prev	TextClass.hpp	/^  Ltr *prev;$/;"	m	class:Ltr
+setAge	Student.hpp	/^  void setAge(int age) { this->age = age; }$/;"	f	class:Student
+setName	Student.hpp	/^  void setName(std::string name) { this->name = name; }$/;"	f	class:Student
+setNext	StudentList.hpp	/^  void setNext(StudentLink *n) { next = n; }$/;"	f	class:StudentLink
+setNext	TextClass.hpp	/^  void setNext(Ltr *n) { next = n; }$/;"	f	class:Ltr
+setPrev	TextClass.hpp	/^  void setPrev(Ltr *p) { prev = p; }$/;"	f	class:Ltr
+student	StudentList.hpp	/^  Student *student;$/;"	m	class:StudentLink
+tail	StudentList.hpp	/^  StudentLink *tail;$/;"	m	class:StudentList
+tail	TextClass.hpp	/^  Ltr<T> *tail;$/;"	m	class:TextClass
+value	TextClass.hpp	/^  T value;$/;"	m	class:Ltr
+~StudentList	StudentList.cpp	/^StudentList::~StudentList() {$/;"	f	class:StudentList
+~TextClass	TextClass.hpp	/^template <class T> TextClass<T>::~TextClass() {$/;"	f	class:TextClass

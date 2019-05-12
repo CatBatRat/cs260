@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.87"/>
+    <errors>
+        <error id="noCopyConstructor" severity="style" msg="Class &amp;#039;TheArray &amp;lt; int &amp;gt;&amp;#039; does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s)." verbose="Class &amp;#039;TheArray &amp;lt; int &amp;gt;&amp;#039; does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s)." sinceDate="4/10/2019">
+            <location file="TheArray.hpp" line="109"/>
+        </error>
+        <error id="noOperatorEq" severity="style" msg="Class &amp;#039;TheArray &amp;lt; int &amp;gt;&amp;#039; does not have a operator= which is recommended since it has dynamic memory/resource allocation(s)." verbose="Class &amp;#039;TheArray &amp;lt; int &amp;gt;&amp;#039; does not have a operator= which is recommended since it has dynamic memory/resource allocation(s)." sinceDate="4/10/2019">
+            <location file="TheArray.hpp" line="109"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TheArray &amp;lt; int &amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TheArray &amp;lt; int &amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="4/10/2019">
+            <location file="TheArray.hpp" line="25"/>
+        </error>
+    </errors>
+</results>

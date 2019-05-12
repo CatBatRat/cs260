@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1554834168 source:c:\users\keenath\lcc\cis260\week1\lab1\main.cpp
+	"TheArray.hpp"
+	<iomanip>
+	<iostream>
+	<stdexcept>
+
+1555032219 c:\users\keenath\lcc\cis260\week1\lab1\thearray.hpp
+	<iostream>
+	<stdexcept>
+	<string>
+

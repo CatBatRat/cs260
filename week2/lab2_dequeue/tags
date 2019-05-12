@@ -1,0 +1,43 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEQUEUE	Dequeue.h	/^#define DEQUEUE$/;"	d
+Dequeue	Dequeue.cpp	/^Dequeue::Dequeue() : left(0), right(1), len(0), bounds(10) {$/;"	f	class:Dequeue
+Dequeue	Dequeue.cpp	/^Dequeue::Dequeue(int size) : left(0), right(1), len(0) {$/;"	f	class:Dequeue
+Dequeue	Dequeue.h	/^class Dequeue {$/;"	c
+STACK	Stack.h	/^#define STACK$/;"	d
+Stack	Stack.h	/^    Stack() { arr = new int[bounds]; }$/;"	f	class:Stack
+Stack	Stack.h	/^    Stack(int size) { arr = new int[size]; }$/;"	f	class:Stack
+Stack	Stack.h	/^class Stack : public Dequeue {$/;"	c
+TEST_DEQUEUE_EXCEPTS	main.cpp	/^#define TEST_DEQUEUE_EXCEPTS$/;"	d	file:
+TEST_DEQUEUE_FIFO	main.cpp	/^#define TEST_DEQUEUE_FIFO$/;"	d	file:
+TEST_DEQUEUE_GROW	main.cpp	/^#define TEST_DEQUEUE_GROW$/;"	d	file:
+TEST_DEQUEUE_LIFO	main.cpp	/^#define TEST_DEQUEUE_LIFO$/;"	d	file:
+TEST_DEQUEUE_WRAP	main.cpp	/^#define TEST_DEQUEUE_WRAP$/;"	d	file:
+TEST_LIST_DEQUEUE	main.cpp	/^#define TEST_LIST_DEQUEUE$/;"	d	file:
+TEST_STACK	main.cpp	/^#define TEST_STACK$/;"	d	file:
+addLeft	Dequeue.cpp	/^void Dequeue::addLeft(int n) {$/;"	f	class:Dequeue
+addRight	Dequeue.cpp	/^void Dequeue::addRight(int n) {$/;"	f	class:Dequeue
+arr	Dequeue.h	/^  int *arr;$/;"	m	class:Dequeue
+arrError	Dequeue.cpp	/^inline void Dequeue::arrError(std::string type) {$/;"	f	class:Dequeue
+bounds	Dequeue.h	/^  int bounds;$/;"	m	class:Dequeue
+getLeft	Dequeue.cpp	/^int Dequeue::getLeft() {$/;"	f	class:Dequeue
+getRight	Dequeue.cpp	/^int Dequeue::getRight() {$/;"	f	class:Dequeue
+grow	Dequeue.cpp	/^void Dequeue::grow() {$/;"	f	class:Dequeue
+isEmpty	Dequeue.cpp	/^bool Dequeue::isEmpty() {$/;"	f	class:Dequeue
+isFull	Dequeue.cpp	/^bool Dequeue::isFull() {$/;"	f	class:Dequeue
+left	Dequeue.h	/^  int left;$/;"	m	class:Dequeue
+len	Dequeue.h	/^  int len;$/;"	m	class:Dequeue
+listLeftRight	Dequeue.cpp	/^std::string Dequeue::listLeftRight() {$/;"	f	class:Dequeue
+main	main.cpp	/^int main() {$/;"	f
+peek	Stack.cpp	/^int Stack::peek() {$/;"	f	class:Stack
+pop	Stack.cpp	/^int Stack::pop() {$/;"	f	class:Stack
+push	Stack.cpp	/^void Stack::push(int n) {$/;"	f	class:Stack
+resize	Dequeue.cpp	/^void Dequeue::resize(int newSize) {$/;"	f	class:Dequeue
+right	Dequeue.h	/^  int right;$/;"	m	class:Dequeue
+wrap	Dequeue.cpp	/^inline int &Dequeue::wrap(int &w) {$/;"	f	class:Dequeue
+~Dequeue	Dequeue.h	/^  ~Dequeue() { delete[] arr; }$/;"	f	class:Dequeue
+~Stack	Stack.h	/^    ~Stack() { delete[] arr; }$/;"	f	class:Stack

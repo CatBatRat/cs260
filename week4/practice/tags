@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BinaryTree	main-binary-num.cpp	/^  BinaryTree() : root(nullptr) {}$/;"	f	class:BinaryTree
+BinaryTree	main-binary-num.cpp	/^class BinaryTree {$/;"	c	file:
+BinaryTree	main.cpp	/^  BinaryTree() : root(nullptr) {}$/;"	f	class:BinaryTree
+BinaryTree	main.cpp	/^class BinaryTree {$/;"	c	file:
+data	main-prev.cpp	/^  int data;$/;"	m	struct:node	file:
+insert	main-binary-num.cpp	/^  void insert(int n) {$/;"	f	class:BinaryTree
+insert	main-prev.cpp	/^struct node *insert(struct node *tree, int data) {$/;"	f
+insert	main.cpp	/^  void insert(char alg)$/;"	f	class:BinaryTree
+isOperand	main.cpp	/^  bool isOperand(char value) {$/;"	f	class:BinaryTree
+isOperator	main.cpp	/^  bool isOperator(char value) {$/;"	f	class:BinaryTree
+left	main-binary-num.cpp	/^  node *left;$/;"	m	struct:node	file:
+left	main-prev.cpp	/^  struct node *left;$/;"	m	struct:node	typeref:struct:node::node	file:
+left	main.cpp	/^  node *left;$/;"	m	struct:node	file:
+main	main-binary-num.cpp	/^int main() {$/;"	f
+main	main-prev.cpp	/^int main() {$/;"	f
+main	main.cpp	/^int main() {$/;"	f
+newNode	main-prev.cpp	/^struct node *newNode(int data) {$/;"	f
+node	main-binary-num.cpp	/^  node(int value) : value(value), left(nullptr), right(nullptr) {}$/;"	f	struct:node
+node	main-binary-num.cpp	/^struct node {$/;"	s	file:
+node	main-prev.cpp	/^struct node {$/;"	s	file:
+node	main.cpp	/^  node(char value, node *parent = nullptr)$/;"	f	struct:node
+node	main.cpp	/^struct node {$/;"	s	file:
+parent	main.cpp	/^  node *parent;$/;"	m	struct:node	file:
+print	main-binary-num.cpp	/^  void print() {$/;"	f	class:BinaryTree
+print	main.cpp	/^  void print() { recprint(root); }$/;"	f	class:BinaryTree
+printTree	main-prev.cpp	/^void printTree(struct node *tree) {$/;"	f
+recprint	main-binary-num.cpp	/^  void recprint(node *ptr) {$/;"	f	class:BinaryTree
+recprint	main.cpp	/^  std::string recprint(node *ptr)$/;"	f	class:BinaryTree
+right	main-binary-num.cpp	/^  node *right;$/;"	m	struct:node	file:
+right	main-prev.cpp	/^  struct node *right;$/;"	m	struct:node	typeref:struct:node::node	file:
+right	main.cpp	/^  node *right;$/;"	m	struct:node	file:
+root	main-binary-num.cpp	/^  node *root;$/;"	m	class:BinaryTree	file:
+root	main.cpp	/^  node *root;$/;"	m	class:BinaryTree	file:
+tree	main-binary-num.cpp	/^struct node *tree = nullptr;$/;"	v	typeref:struct:node
+tree	main-prev.cpp	/^struct node *tree = nullptr;$/;"	v	typeref:struct:node
+tree	main.cpp	/^struct node *tree = nullptr;$/;"	v	typeref:struct:node
+value	main-binary-num.cpp	/^  int value;$/;"	m	struct:node	file:
+value	main.cpp	/^  char value;$/;"	m	struct:node	file:

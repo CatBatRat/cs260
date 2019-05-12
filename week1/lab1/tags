@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+DEF_SIZE	TheArray.hpp	/^const int DEF_SIZE = 10;$/;"	v
+THE_ARRAY	TheArray.hpp	/^#define THE_ARRAY$/;"	d
+TheArray	TheArray.hpp	/^template <class T> TheArray<T>::TheArray() : bounds(DEF_SIZE), index(0) {$/;"	f	class:TheArray
+TheArray	TheArray.hpp	/^template <class T> TheArray<T>::TheArray(int n) : index(0) {$/;"	f	class:TheArray
+TheArray	TheArray.hpp	/^template <class T> class TheArray {$/;"	c
+append	TheArray.hpp	/^template <class T> void TheArray<T>::append(T n) {$/;"	f	class:TheArray
+args	makefile	/^args=-Wall -Wextra$/;"	m
+arr	TheArray.hpp	/^  T *arr;$/;"	m	class:TheArray
+bounds	TheArray.hpp	/^  int bounds;$/;"	m	class:TheArray
+comp	makefile	/^comp=$(args) $(cpp) -o $(out)$/;"	m
+cpp	makefile	/^cpp=main.cpp$/;"	m
+decrease	TheArray.hpp	/^template <class T> void TheArray<T>::decrease(int i) {$/;"	f	class:TheArray
+getAt	TheArray.hpp	/^template <class T> const T &TheArray<T>::getAt(int i) const {$/;"	f	class:TheArray
+getFirst	TheArray.hpp	/^  const T &getFirst() const { return arr[0]; }$/;"	f	class:TheArray
+getLast	TheArray.hpp	/^  const T &getLast() const { return arr[index - 1]; }$/;"	f	class:TheArray
+getSize	TheArray.hpp	/^  const T &getSize() const { return bounds; }$/;"	f	class:TheArray
+ifError	TheArray.hpp	/^template <class T> inline void TheArray<T>::ifError(int i) const {$/;"	f	class:TheArray
+increase	TheArray.hpp	/^template <class T> void TheArray<T>::increase(int i) {$/;"	f	class:TheArray
+index	TheArray.hpp	/^  int index;$/;"	m	class:TheArray
+insertAt	TheArray.hpp	/^template <class T> void TheArray<T>::insertAt(int i, T n) {$/;"	f	class:TheArray
+newSize	TheArray.hpp	/^template <class T> void TheArray<T>::newSize(int s) {$/;"	f	class:TheArray
+operator []	TheArray.hpp	/^  T &operator[](int i) {$/;"	f	class:TheArray
+operator []	TheArray.hpp	/^  const T &operator[](int i) const {$/;"	f	class:TheArray
+out	makefile	/^out=vector-like.exe$/;"	m
+removeAt	TheArray.hpp	/^template <class T> T TheArray<T>::removeAt(int i) {$/;"	f	class:TheArray
+setAt	TheArray.hpp	/^template <class T> void TheArray<T>::setAt(int i, T n) {$/;"	f	class:TheArray
+setSize	TheArray.hpp	/^template <class T> void TheArray<T>::setSize(int s) {$/;"	f	class:TheArray
+swapper	TheArray.hpp	/^template <class T> inline void TheArray<T>::swapper(T &l, T &r) {$/;"	f	class:TheArray
+~TheArray	TheArray.hpp	/^  ~TheArray() { delete[] arr; }$/;"	f	class:TheArray

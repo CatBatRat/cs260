@@ -1,0 +1,73 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BASE	ChainedHash.h	/^  const int BASE = 26;$/;"	m	class:ChainedHash
+BASE	StringHash.h	/^  const unsigned int BASE = 26;$/;"	m	class:StringHash
+CHAIN_HASH	tests/driver.cpp	/^#define CHAIN_HASH$/;"	d	file:
+Chain	ChainedHash.h	/^  Chain(string word, Chain *next = nullptr)$/;"	f	struct:Chain
+Chain	ChainedHash.h	/^struct Chain {$/;"	s
+ChainedHash	ChainedHash.cpp	/^ChainedHash::ChainedHash() {$/;"	f	class:ChainedHash
+ChainedHash	ChainedHash.h	/^class ChainedHash {$/;"	c
+ChainedHash	src/ChainedHash.cpp	/^ChainedHash::ChainedHash() {$/;"	f	class:ChainedHash
+Hash	ChainedHash.cpp	/^int ChainedHash::Hash(string input) {$/;"	f	class:ChainedHash
+Hash	StringHash.cpp	/^int StringHash::Hash(string input) {$/;"	f	class:StringHash
+Hash	src/ChainedHash.cpp	/^int ChainedHash::Hash(string input) {$/;"	f	class:ChainedHash
+Hash	src/StringHash.cpp	/^int StringHash::Hash(string input) {$/;"	f	class:StringHash
+NextLowestPrime	StringHash.cpp	/^unsigned int StringHash::NextLowestPrime(unsigned int number) {$/;"	f	class:StringHash
+NextLowestPrime	src/StringHash.cpp	/^unsigned int StringHash::NextLowestPrime(unsigned int number) {$/;"	f	class:StringHash
+STRING_HASH	driver.cpp	/^#define STRING_HASH$/;"	d	file:
+STRING_HASH	tests/driver.cpp	/^#define STRING_HASH$/;"	d	file:
+StringHash	StringHash.cpp	/^StringHash::StringHash() : tSize(5) {$/;"	f	class:StringHash
+StringHash	StringHash.h	/^class StringHash {$/;"	c
+StringHash	src/StringHash.cpp	/^StringHash::StringHash() : tSize(5) {$/;"	f	class:StringHash
+_CHAINED_HASH_	ChainedHash.h	/^#define _CHAINED_HASH_$/;"	d
+__OPEN_HASH__	StringHash.h	/^#define __OPEN_HASH__$/;"	d
+addValue	ChainedHash.cpp	/^void ChainedHash::addValue(string word) {$/;"	f	class:ChainedHash
+addValue	StringHash.cpp	/^void StringHash::addValue(string word) {$/;"	f	class:StringHash
+addValue	src/ChainedHash.cpp	/^void ChainedHash::addValue(string word) {$/;"	f	class:ChainedHash
+addValue	src/StringHash.cpp	/^void StringHash::addValue(string word) {$/;"	f	class:StringHash
+args	makefile	/^args=-Wall -Wextra$/;"	m
+cpp	makefile	/^cpp=$(wildcard src\/*.cpp)$/;"	m
+deleteChain	ChainedHash.cpp	/^void ChainedHash::deleteChain(Chain *ptr) {$/;"	f	class:ChainedHash
+deleteChain	src/ChainedHash.cpp	/^void ChainedHash::deleteChain(Chain *ptr) {$/;"	f	class:ChainedHash
+deps	makefile	/^deps=$(wildcard deps\/*.h)$/;"	m
+displayTable	ChainedHash.cpp	/^string ChainedHash::displayTable() {$/;"	f	class:ChainedHash
+displayTable	StringHash.cpp	/^string StringHash::displayTable() {$/;"	f	class:StringHash
+displayTable	src/ChainedHash.cpp	/^string ChainedHash::displayTable() {$/;"	f	class:ChainedHash
+displayTable	src/StringHash.cpp	/^string StringHash::displayTable() {$/;"	f	class:StringHash
+driver	makefile	/^driver=tests\/driver.cpp$/;"	m
+find	StringHash.cpp	/^unsigned int StringHash::find(string word) {$/;"	f	class:StringHash
+find	src/StringHash.cpp	/^unsigned int StringHash::find(string word) {$/;"	f	class:StringHash
+findValue	ChainedHash.cpp	/^bool ChainedHash::findValue(string word) {$/;"	f	class:ChainedHash
+findValue	StringHash.cpp	/^bool StringHash::findValue(string word) {$/;"	f	class:StringHash
+findValue	src/ChainedHash.cpp	/^bool ChainedHash::findValue(string word) {$/;"	f	class:ChainedHash
+findValue	src/StringHash.cpp	/^bool StringHash::findValue(string word) {$/;"	f	class:StringHash
+initArr	ChainedHash.cpp	/^void ChainedHash::initArr() {$/;"	f	class:ChainedHash
+initArr	StringHash.cpp	/^void StringHash::initArr() {$/;"	f	class:StringHash
+initArr	src/ChainedHash.cpp	/^void ChainedHash::initArr() {$/;"	f	class:ChainedHash
+initArr	src/StringHash.cpp	/^void StringHash::initArr() {$/;"	f	class:StringHash
+main	driver.cpp	/^int main() {$/;"	f
+main	main.cpp	/^int main() {$/;"	f
+main	tests/driver.cpp	/^int main() {$/;"	f
+main	tests/main.cpp	/^int main() {$/;"	f
+mydriver	makefile	/^mydriver=tests\/main.cpp$/;"	m
+next	ChainedHash.h	/^  Chain *next;$/;"	m	struct:Chain
+numItems	StringHash.h	/^  unsigned int numItems = 0;$/;"	m	class:StringHash
+out	makefile	/^out=hash.exe$/;"	m
+removeValue	ChainedHash.cpp	/^bool ChainedHash::removeValue(string word) {$/;"	f	class:ChainedHash
+removeValue	StringHash.cpp	/^bool StringHash::removeValue(string word) {$/;"	f	class:StringHash
+removeValue	src/ChainedHash.cpp	/^bool ChainedHash::removeValue(string word) {$/;"	f	class:ChainedHash
+removeValue	src/StringHash.cpp	/^bool StringHash::removeValue(string word) {$/;"	f	class:StringHash
+resize	StringHash.cpp	/^void StringHash::resize() {$/;"	f	class:StringHash
+resize	src/StringHash.cpp	/^void StringHash::resize() {$/;"	f	class:StringHash
+tSize	ChainedHash.h	/^  int tSize = 17;$/;"	m	class:ChainedHash
+tSize	StringHash.h	/^  unsigned int tSize;$/;"	m	class:StringHash
+word	ChainedHash.h	/^  string word;$/;"	m	struct:Chain
+wordArr	ChainedHash.h	/^  Chain **wordArr;$/;"	m	class:ChainedHash
+wordArr	StringHash.h	/^  string *wordArr;$/;"	m	class:StringHash
+~ChainedHash	ChainedHash.cpp	/^ChainedHash::~ChainedHash() {$/;"	f	class:ChainedHash
+~ChainedHash	src/ChainedHash.cpp	/^ChainedHash::~ChainedHash() {$/;"	f	class:ChainedHash
+~StringHash	StringHash.h	/^  ~StringHash() { delete[] wordArr; }$/;"	f	class:StringHash

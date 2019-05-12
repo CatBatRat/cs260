@@ -7,8 +7,11 @@ cpp=$(wildcard src/*.cpp)
 deps=$(wildcard deps/*.h)
 
 # tests
-mydriver=tests/main.cpp
-driver=tests/driver.cpp
+mydriver=main.cpp
+driver=driver.cpp
+
+clean:
+	start del *.exe
 
 mt:
 	clang++ $(args) $(cpp) $(mydriver) -o my-$(out)

@@ -6,6 +6,7 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 BASE	ChainedHash.h	/^  const int BASE = 26;$/;"	m	class:ChainedHash
 BASE	StringHash.h	/^  const unsigned int BASE = 26;$/;"	m	class:StringHash
+CHAIN_HASH	driver.cpp	/^#define CHAIN_HASH$/;"	d	file:
 CHAIN_HASH	tests/driver.cpp	/^#define CHAIN_HASH$/;"	d	file:
 Chain	ChainedHash.h	/^  Chain(string word, Chain *next = nullptr)$/;"	f	struct:Chain
 Chain	ChainedHash.h	/^struct Chain {$/;"	s
@@ -38,7 +39,7 @@ displayTable	ChainedHash.cpp	/^string ChainedHash::displayTable() {$/;"	f	class:
 displayTable	StringHash.cpp	/^string StringHash::displayTable() {$/;"	f	class:StringHash
 displayTable	src/ChainedHash.cpp	/^string ChainedHash::displayTable() {$/;"	f	class:ChainedHash
 displayTable	src/StringHash.cpp	/^string StringHash::displayTable() {$/;"	f	class:StringHash
-driver	makefile	/^driver=tests\/driver.cpp$/;"	m
+driver	makefile	/^driver=driver.cpp$/;"	m
 find	StringHash.cpp	/^unsigned int StringHash::find(string word) {$/;"	f	class:StringHash
 find	src/StringHash.cpp	/^unsigned int StringHash::find(string word) {$/;"	f	class:StringHash
 findValue	ChainedHash.cpp	/^bool ChainedHash::findValue(string word) {$/;"	f	class:ChainedHash
@@ -53,7 +54,7 @@ main	driver.cpp	/^int main() {$/;"	f
 main	main.cpp	/^int main() {$/;"	f
 main	tests/driver.cpp	/^int main() {$/;"	f
 main	tests/main.cpp	/^int main() {$/;"	f
-mydriver	makefile	/^mydriver=tests\/main.cpp$/;"	m
+mydriver	makefile	/^mydriver=main.cpp$/;"	m
 next	ChainedHash.h	/^  Chain *next;$/;"	m	struct:Chain
 numItems	StringHash.h	/^  unsigned int numItems = 0;$/;"	m	class:StringHash
 out	makefile	/^out=hash.exe$/;"	m

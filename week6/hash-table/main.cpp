@@ -1,5 +1,5 @@
-#include "../deps/ChainedHash.h"
-#include "../deps/StringHash.h"
+#include "deps/ChainedHash.h"
+#include "deps/StringHash.h"
 #include <iostream>
 #include <string>
 

@@ -15,10 +15,10 @@
 #define CHAIN_HASH
 
 #ifdef STRING_HASH
-#include "../deps/StringHash.h"
+#include "deps/StringHash.h"
 #endif
 #ifdef CHAIN_HASH
-#include "../deps/ChainedHash.h"
+#include "deps/ChainedHash.h"
 #endif
 
 using namespace std;

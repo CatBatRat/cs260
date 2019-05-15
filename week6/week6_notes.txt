@@ -1,0 +1,6 @@
+void quicksort(arr, length)
+  if length <= 1
+    return
+  int pivot = partition(arr, length)
+  quicksort(arr,pivot - 1)
+  quicksort(arr + pivot, length - pivot)

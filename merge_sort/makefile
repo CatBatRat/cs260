@@ -1,6 +1,6 @@
-cpp=main.cpp StudentList.cpp
-args=-Wall -Wextra
-out=double-link.exe
+cpp=main.cpp
+args=-Wall -Wextra -Werror
+out=merge.exe
 comp=$(args) $(cpp) -o $(out)
 
 clang:

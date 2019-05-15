@@ -38,10 +38,10 @@
 			<Add option="-Werror" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="ChainedHash.cpp" />
-		<Unit filename="ChainedHash.h" />
-		<Unit filename="StringHash.cpp" />
-		<Unit filename="StringHash.h" />
+		<Unit filename="src/ChainedHash.cpp" />
+		<Unit filename="deps/ChainedHash.h" />
+		<Unit filename="src/StringHash.cpp" />
+		<Unit filename="deps/StringHash.h" />
 		<Unit filename="driver.cpp" />
 		<Extensions>
 			<code_completion />

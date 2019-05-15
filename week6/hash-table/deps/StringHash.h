@@ -8,7 +8,6 @@ using std::string;
 
 class StringHash {
 private:
-  const unsigned int BASE = 26;
   unsigned int numItems = 0;
   unsigned int tSize;
   string *wordArr;
@@ -21,6 +20,7 @@ private:
 
 public:
   StringHash();
+  StringHash(unsigned int size);
   ~StringHash() { delete[] wordArr; }
   void addValue(string word);
   bool findValue(string word);

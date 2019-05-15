@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1557611772 source:c:\repositories\github\cs260\hashtables\main.cpp
+	<iostream>
+	<cstdlib>
+	<stdexcept>
+	"StringHash.h"
+	"ChainedHash.h"
+
+1557604099 c:\repositories\github\cs260\hashtables\include\stringhash.h
+	<iostream>
+
+1557611854 source:c:\repositories\github\cs260\hashtables\src\stringhash.cpp
+	<memory.h>
+	"StringHash.h"
+
+1557610149 c:\repositories\github\cs260\hashtables\include\chainedhash.h
+	<iostream>
+	<list>
+
+1557611787 source:c:\repositories\github\cs260\hashtables\src\chainedhash.cpp
+	<iostream>
+	<algorithm>
+	"ChainedHash.h"
+
+1557864198 source:c:\users\keenath\lcc\cis260\week6\peer-review\main.cpp
+	<iostream>
+	<cstdlib>
+	<stdexcept>
+	"StringHash.h"
+	"ChainedHash.h"
+
+1557604100 c:\users\keenath\lcc\cis260\week6\peer-review\include\stringhash.h
+	<iostream>
+
+1557610150 c:\users\keenath\lcc\cis260\week6\peer-review\include\chainedhash.h
+	<iostream>
+	<list>
+
+1557864249 source:c:\users\keenath\lcc\cis260\week6\peer-review\src\chainedhash.cpp
+	<iostream>
+	<algorithm>
+	"ChainedHash.h"
+
+1557864249 source:c:\users\keenath\lcc\cis260\week6\peer-review\src\stringhash.cpp
+	<memory.h>
+	"StringHash.h"
+

@@ -6,26 +6,26 @@
 
 using std::string;
 
-struct Chain {
+struct Node {
   string word;
-  Chain *next;
-  Chain(string word, Chain *next = nullptr)
+  Node *next;
+  Node(string word, Node *next = nullptr)
       : word(word), next(next) {}
 };
 
 class ChainedHash {
 private:
-  const int BASE = 26;
   int tSize = 17;
-  Chain **wordArr;
+  Node **wordArr;
 
-  int NextLowestPrime(int number);
-  void deleteChain(Chain *ptr);
+  int NextLowestPrime(unsigned int number);
+  void deleteChain(Node *ptr);
   void initArr();
   int Hash(string input);
 
 public:
   ChainedHash();
+  ChainedHash(unsigned int size);
   ~ChainedHash();
   void addValue(string word);
   bool findValue(string word);

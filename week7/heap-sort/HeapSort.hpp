@@ -3,7 +3,6 @@
 
 class HeapSort {
 private:
-  //int head = 0;
   int size;
   int *heap;
 

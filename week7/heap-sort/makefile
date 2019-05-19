@@ -1,6 +1,6 @@
-cpp=main.cpp Heap.cpp
+cpp=driver.cpp HeapSort.cpp
 args=-Wall -Wextra -Werror
-out=heap.exe
+out=heapsort.exe
 comp=$(args) $(cpp) -o $(out)
 
 clang:

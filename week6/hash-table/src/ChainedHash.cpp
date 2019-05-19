@@ -8,7 +8,6 @@ const int BASE = 26;
 
 // generate new table and initialize the array
 ChainedHash::ChainedHash() {
-  wordArr = new Node *[tSize];
   initArr();
 }
 
@@ -17,13 +16,13 @@ ChainedHash::ChainedHash() {
 //   and find the next lowest prime if not
 ChainedHash::ChainedHash(unsigned int size) {
   tSize = NextLowestPrime(size);
-  wordArr = new Node *[tSize];
   initArr();
 }
 
 
 // fill new array with `nullptr`
 void ChainedHash::initArr() {
+  wordArr = new Node *[tSize];
   for (int i = 0; i < tSize; i++) {
     wordArr[i] = nullptr;
   }
@@ -35,6 +34,7 @@ ChainedHash::~ChainedHash() {
     if (wordArr[i])
       deleteChain(wordArr[i]);
   }
+  std::cout << "deleting array" << std::endl;
   delete[] wordArr;
 }
 

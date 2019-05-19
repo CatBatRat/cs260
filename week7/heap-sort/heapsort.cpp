@@ -1,27 +1,42 @@
-#include "Heap.h"
+#include "HeapSort.hpp"
 #include <iostream>
-
-using namespace std;
 
 // Inline swap function that use bitwise XOR to swap the bit of the variables
 // without having to create an new variable as the transfer point.
-inline void Heap::intSwap(int &l, int &r) {
+inline void HeapSort::intSwap(int &l, int &r) {
   l ^= r;
   r ^= l;
   l ^= r;
 }
 
-// Insert new element at end of heap then use bubbleUp to place element at the
-// right level.
-void Heap::insert(int n) {
-  grow();
-  heap[size] = n;
-  bubbleUp(size);
-  size++;
+// tried a few different methods here that all work.
+void HeapSort::heapify() {
+  for (int i = 0; i < size; i++)
+    bubbleUp(i);
+}
+
+void HeapSort::heapSort(int arr[], int size) {
+  this->heap = arr;
+  this->size = size;
+  int fullSize = size;
+  heapify();
+  for (int h = 0; h < fullSize; h++) {
+    minSort();
+  }
+}
+
+// Swap element at front with end that call trickle down to re-heap
+//   decrement `--size`
+inline void HeapSort::minSort() {
+  // only perform the sort while `size` is greater than 0
+  if(--size > 0) { // decrement the size before comparison
+    intSwap(heap[0], heap[size]);
+    trickleDown(0);
+  }
 }
 
 // Swap with parent until child is not greater than parent.
-void Heap::bubbleUp(int i) {
+void HeapSort::bubbleUp(int i) {
   int p = parent(i);
   while (i > 0 && (heap[i] > heap[p])) {
     intSwap(heap[p], heap[i]);
@@ -30,21 +45,10 @@ void Heap::bubbleUp(int i) {
   }
 }
 
-// Store element at index 0, fill posision with element at end the trickle down
-// until in the proper place
-int Heap::remove() {
-  if (size <= 0)
-    throw std::length_error("No more items to remove from heap.");
-  int temp = heap[0];
-  heap[0] = heap[--size];
-  trickleDown(0);
-  return temp;
-}
-
 // Compare the current node to both children and swap with the lowest of the two
 // then set current to the one swapped with and run the check again until they
 // are in decending order per level of the tree.
-void Heap::trickleDown(int i) {
+void HeapSort::trickleDown(int i) {
   do {
     int child = -1;
     int r = right(i);
@@ -65,22 +69,4 @@ void Heap::trickleDown(int i) {
       intSwap(heap[i], heap[child]);
     i = child;
   } while (i >= 0);
-}
-
-// Simple function to check if the heap should be resized.
-inline void Heap::grow() {
-  if (size >= bounds)
-    resize(bounds * 2);
-}
-
-// Create a new heap array and copy the contents from old to new then delete the
-// old one.
-void Heap::resize(int s) {
-  int *newHeap = new int[s];
-  for (int s = 0; s < bounds; s++) {
-    newHeap[s] = heap[s];
-  }
-  delete[] heap;
-  heap = newHeap;
-  bounds *= 2;
 }

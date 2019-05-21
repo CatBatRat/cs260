@@ -18,6 +18,7 @@ protected:
 
 public:
   HeapSort() : size(0), heap(nullptr) {}
+  ~HeapSort() {delete[] heap;}
   void heapSort(int arr[], int size);
 };
 

@@ -40,6 +40,8 @@ int main() {
   cout << "The sorted data is " << endl;
   display(values, SIZE);
 
+  delete[] values;
+
   return 0;
 }
 

@@ -9,6 +9,7 @@ private:
 
 public:
   Heap(int bounds = 10) : size(0), bounds(bounds) { heap = new int[bounds]; }
+  ~Heap() {delete[] heap;}
   inline int left(int i) { return 2 * i + 1; }
   inline int right(int i) { return 2 * i + 2; }
   inline int parent(int i) { return (i - 1) / 2; }

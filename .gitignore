@@ -27,6 +27,7 @@
 *.log
 *.sql
 *.sqlite
+.vscode
 
 # OS generated files #
 ######################

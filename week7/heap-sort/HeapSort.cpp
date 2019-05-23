@@ -11,8 +11,9 @@ inline void HeapSort::intSwap(int &l, int &r) {
 
 // start at the top and bubbleUp at each element
 void HeapSort::heapify() {
-  for (int i = 0; i < size; i++)
+  for (int i = 0; i < size; i++) {
     bubbleUp(i);
+  }
 }
 
 // set up everyting for the heap sort
@@ -71,8 +72,9 @@ void HeapSort::trickleDown(int i) {
         child = l;
       }
     }
-    if (child >= 0)
+    if (child >= 0) {
       intSwap(heap[i], heap[child]);
+    }
     i = child;
   } while (i >= 0);
 }

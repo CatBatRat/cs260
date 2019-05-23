@@ -11,7 +11,7 @@
 #include <iomanip>
 #include <iostream>
 
-//using namespace std;
+// using namespace std;
 using std::cout;
 using std::endl;
 using std::setw;
@@ -23,7 +23,7 @@ void init(int theArray[], int length);
 
 int main() {
   // create the array
-  const int SIZE = 40;
+  const int SIZE = 20;
   int *values = new int[SIZE];
 
   HeapSort heap;

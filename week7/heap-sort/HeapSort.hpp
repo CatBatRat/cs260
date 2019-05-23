@@ -14,11 +14,11 @@ protected:
   inline void minSort();
   void heapify();
   void bubbleUp(int index);
-  void trickleDown( int index);
+  void trickleDown(int index);
 
 public:
   HeapSort() : size(0), heap(nullptr) {}
-  ~HeapSort() {delete[] heap;}
+  virtual ~HeapSort() {}
   void heapSort(int arr[], int size);
 };
 

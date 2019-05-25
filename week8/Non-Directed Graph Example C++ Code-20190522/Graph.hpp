@@ -37,6 +37,8 @@ class Graph
         std::string listNodes();
         std::string displayEdges();
         std::string displayMatrix();
+        std::string depthFirst(char start);
+        std::string breadthFirst(char start);
 
 
     private:

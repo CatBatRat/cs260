@@ -212,6 +212,8 @@ void Graph::resetVisited()
     nodeList[i]->visited = false;
 }
 
+// breadth first traversal starting at the index of a node in the nodeList
+// >>array determined by a char value input as the argument
 std::string Graph::breadthFirst(char start)
 {
   // create a ostringstream for output
@@ -227,37 +229,37 @@ std::string Graph::breadthFirst(char start)
     return out.str();
   }
   // get pointer for the current node using index from `findNode`
-  Node *cons = nodeList[loc];
+  Node *ptr = nodeList[loc];
   // push node onto queue and set it as visited
-  bf.push(cons);
-  cons->visited = true;
+  bf.push(ptr);
+  ptr->visited = true;
   out << "Breadth First Traversal staring at " << start << "\n";
   // input data from first node to the string ouput object
-  out << cons->name << " :";
+  out << ptr->name << " :";
   Edge *edge = nullptr;
   // while the queue is not empty
   while (!bf.empty())
   {
     // capture pointer of first item in the queue
-    cons = bf.front();
+    ptr = bf.front();
     // pop item from the queue
     bf.pop();
     // pointer to link list of edges connecting to this node
-    edge = cons->connects;
+    edge = ptr->connects;
     while (edge)
     {
       // next node in graph using index from `connects` to find
       // corisponding node in nodeList
-      cons = nodeList[edge->endIndex];
+      ptr = nodeList[edge->endIndex];
       // if node has not been visited
-      if (cons->visited == false)
+      if (ptr->visited == false)
       {
         // add name to output string
-        out << " " << cons->name;
+        out << " " << ptr->name;
         // set to visited
-        cons->visited = true;
+        ptr->visited = true;
         // push onto the queue
-        bf.push(cons);
+        bf.push(ptr);
       }
       // next connected edge
       edge = edge->next;
@@ -283,22 +285,22 @@ std::string Graph::depthFirst(char start)
     return out.str();
   }
   // get pointer for the current node using index from `findNode`
-  Node *cons = nodeList[loc];
+  Node *ptr = nodeList[loc];
   // push node onto stack and set it as visited
-  df.push(cons);
-  cons->visited = true;
+  df.push(ptr);
+  ptr->visited = true;
   out << "Depth First Traversal staring at " << start << "\n";
   // input data from first node to the string ouput object
-  out << cons->name << " :";
+  out << ptr->name << " :";
   // while the stack is not empty
   while (!df.empty())
   {
     // capture pointer of first item in the stack
-    cons = df.top();
+    ptr = df.top();
     // pop top item from the stack
     df.pop();
     // pointer to link list of edges connecting to this node
-    Edge *edge = cons->connects;
+    Edge *edge = ptr->connects;
     while (edge)
     {
       // next node in graph using index from connects to find
@@ -308,7 +310,7 @@ std::string Graph::depthFirst(char start)
       if (otherEnd->visited == false)
       {
         // push both the current and the otherEnd on the stack
-        df.push(cons);
+        df.push(ptr);
         df.push(otherEnd);
         // set otherEnd to visited
         otherEnd->visited = true;

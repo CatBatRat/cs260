@@ -36,8 +36,6 @@ int main()
 
     cout << tree.breadthFirst('Q') << endl;
 
-    cout << tree.displayMatrix() << endl;
-
     cout << tree.depthFirst('Q') << endl;
 
     return 0;

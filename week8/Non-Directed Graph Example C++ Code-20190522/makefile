@@ -1,5 +1,5 @@
 cpp=driver.cpp Graph.cpp
-args=-Wall -Wextra #-Werror
+args=-Wall -Wextra -Werror
 out=graph.exe
 comp=$(args) $(cpp) -o $(out)
 

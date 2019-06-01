@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1558742029 source:c:\repositories\github\cs260\graph\main.cpp
+	<iostream>
+	"Graph.hpp"
+
+1558741148 c:\repositories\github\cs260\graph\graph.hpp
+	<string>
+
+1558825901 source:c:\repositories\github\cs260\graph\graph.cpp
+	"Graph.hpp"
+	<stdexcept>
+	<sstream>
+	<iomanip>
+	<queue>
+	<stack>
+
+1558825902 source:c:\users\keenath\lcc\cis260\week8\peer\steven\lab_8\graph.cpp
+	"Graph.hpp"
+	<stdexcept>
+	<sstream>
+	<iomanip>
+	<queue>
+	<stack>
+
+1558741150 c:\users\keenath\lcc\cis260\week8\peer\steven\lab_8\graph.hpp
+	<string>
+
+1558742030 source:c:\users\keenath\lcc\cis260\week8\peer\steven\lab_8\main.cpp
+	<iostream>
+	"Graph.hpp"
+

@@ -6,7 +6,7 @@
 //  Licensed under a Creative Commons Attribution 4.0 International License.
 //
 
-#include "Graph.hpp"
+#include "WGraph.hpp"
 
 // for exception handling
 #include <stdexcept>
@@ -40,7 +40,7 @@ struct Node
  */
 
 // constructor
-Graph::Graph()
+WGraph::WGraph()
 {
   // initialize number of nodes in list
   numNodes = 0;
@@ -56,7 +56,7 @@ Graph::Graph()
 }
 
 // destructor
-Graph::~Graph()
+WGraph::~WGraph()
 {
   // delete all connections from each node in nodeList
   for (int i = 0; i < numNodes; i++)
@@ -74,7 +74,7 @@ Graph::~Graph()
 
 // add a new node to the graph
 // only failure is if graph arrays are full
-void Graph::addNode(char name)
+void WGraph::addNode(char name)
 {
   // alternately, double the size of everything and start over
   if (numNodes >= SIZE)
@@ -94,7 +94,7 @@ void Graph::addNode(char name)
 // add a new edge to the graph
 // return false and do nothing if either end is invalid
 // otherwise add to both nodes edge lists and to the matrix
-bool Graph::addEdge(char starts, char ends)
+bool WGraph::addWEdge(char starts, char ends, int weight)
 {
   if (starts == ends)
     return false;
@@ -106,19 +106,21 @@ bool Graph::addEdge(char starts, char ends)
     return false;
 
   // set both links in edgeMatrix
-  edgeMatrix[startIndex][endIndex] = 1;
-  edgeMatrix[endIndex][startIndex] = 1;
+  edgeMatrix[startIndex][endIndex] = weight;
+  edgeMatrix[endIndex][startIndex] = weight;
 
   // create two new edges (one for each direction)
   // and add one to each nodes list of edges
   Edge *startEnd = new Edge;
   startEnd->endIndex = endIndex;
+  startEnd->weight = weight;
   startEnd->next = nullptr;
   startEnd->next = nodeList[startIndex]->connects;
   nodeList[startIndex]->connects = startEnd;
 
   Edge *endStart = new Edge;
   endStart->endIndex = startIndex;
+  endStart->weight = weight;
   endStart->next = nullptr;
   endStart->next = nodeList[endIndex]->connects;
   nodeList[endIndex]->connects = endStart;
@@ -129,7 +131,7 @@ bool Graph::addEdge(char starts, char ends)
 // linear search for a node with this name
 // return -1 if not found
 // otherwise return its index in the nodeList
-int Graph::findNode(char name)
+int WGraph::findNode(char name)
 {
   for (int i = 0; i < numNodes; i++)
     if (nodeList[i]->name == name)
@@ -139,7 +141,7 @@ int Graph::findNode(char name)
 
 // listing of nodes in the order
 // they were added to the graph
-std::string Graph::listNodes()
+std::string WGraph::listNodes()
 {
   std::string theList = "";
   for (int i = 0; i < numNodes; i++)
@@ -152,7 +154,7 @@ std::string Graph::listNodes()
 
 // for each node in graph,
 // display its edges, using the edgelist
-std::string Graph::displayEdges()
+std::string WGraph::displayWEdges()
 {
   std::stringstream ss;
   for (int i = 0; i < numNodes; i++)
@@ -177,7 +179,7 @@ std::string Graph::displayEdges()
 
 // display the adjacency matrix
 // as 0 for no connection and 1 for connection
-std::string Graph::displayMatrix()
+std::string WGraph::displayWMatrix()
 {
   std::stringstream ss;
 
@@ -206,7 +208,7 @@ std::string Graph::displayMatrix()
 }
 
 // helper function to reset all nodes to not visited
-void Graph::resetVisited()
+void WGraph::resetVisited()
 {
   for (int i = 0; i < numNodes; i++)
     nodeList[i]->visited = false;
@@ -214,7 +216,7 @@ void Graph::resetVisited()
 
 // breadth first traversal starting at the index of a node in the nodeList
 // >>array determined by a char value input as the argument
-std::string Graph::breadthFirst(char start)
+std::string WGraph::breadthFirst(char start)
 {
   // create a ostringstream for output
   std::ostringstream out;
@@ -245,8 +247,8 @@ std::string Graph::breadthFirst(char start)
     // pop item from the queue
     bf.pop();
     // pointer to link list of edges connecting to this node
-    edge = ptr->connects;
-    while (edge)
+    //edge = ptr->connects;
+    //while (edge)
     {
       // next node in graph using index from `connects` to find
       // corisponding node in nodeList
@@ -270,7 +272,7 @@ std::string Graph::breadthFirst(char start)
   return out.str();
 }
 
-std::string Graph::depthFirst(char start)
+ std::string WGraph::depthFirst(char start)
 {
   // create a ostringstream for output
   std::ostringstream out;
@@ -300,8 +302,7 @@ std::string Graph::depthFirst(char start)
     // pop top item from the stack
     df.pop();
     // pointer to link list of edges connecting to this node
-    Edge *edge = ptr->connects;
-    while (edge)
+    for(Edge *edge = ptr->connects; edge; edge = edge->next)
     {
       // next node in graph using index from connects to find
       // corisponding node in nodeList
@@ -319,10 +320,21 @@ std::string Graph::depthFirst(char start)
         // break
         break;
       }
-      // next `connects` node
-      edge = edge->next;
     }
   }
   resetVisited();
+  return out.str();
+}
+
+std::string WGraph::minCostTree(char start)
+{
+  // create a ostringstream for output
+  std::ostringstream out;
+  // create the stack
+  std::vector<Edge *> mc;
+  // find location of first node
+  int nodeLocation = findNode(start);
+  Node *ptr = (nodeLocation > -1) ? nodeList[nodeLocation] : nullptr;
+  //for(Edge *edge = ptr->connects; edge; edge = edge->next)
   return out.str();
 }

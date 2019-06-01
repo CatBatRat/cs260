@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Graph.hpp"
+#include "GRAPH.H"
 
 using namespace std;
 
@@ -36,12 +36,8 @@ int main()
     cout << tree.displayMatrix() << endl << endl;
 
     cout << tree.breadthFirst('Q') << endl << endl;
-    cout << tree.breadthFirst('K') << endl << endl;
-    cout << tree.breadthFirst('X') << endl << endl;
 
     cout << tree.depthFirst('Q') << endl << endl;
-    cout << tree.depthFirst('K') << endl << endl;
-    cout << tree.depthFirst('X') << endl << endl;
 
     return 0;
 }

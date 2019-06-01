@@ -1,3 +1,10 @@
+//
+//  Main.cpp
+//  Example Non-directed, non-weighted graph test driver
+//
+//  Created by Jim Bailey on 11/25/17.
+//  Licensed under a Creative Commons Attribution 4.0 International License.
+//
 #include <iostream>
 
 #include "Graph.hpp"
@@ -33,15 +40,10 @@ int main()
     tree.addEdge('Z', 'X');
 
     cout << tree.displayEdges() << endl << endl;
-    cout << tree.displayMatrix() << endl << endl;
 
-    cout << tree.breadthFirst('Q') << endl << endl;
-    cout << tree.breadthFirst('K') << endl << endl;
-    cout << tree.breadthFirst('X') << endl << endl;
+    cout << tree.breadthFirst('Q') << endl;
 
-    cout << tree.depthFirst('Q') << endl << endl;
-    cout << tree.depthFirst('K') << endl << endl;
-    cout << tree.depthFirst('X') << endl << endl;
+    cout << tree.depthFirst('Q') << endl;
 
     return 0;
 }

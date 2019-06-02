@@ -18,6 +18,7 @@
 // for breadth first and depth first traversals
 #include <queue>
 #include <stack>
+#include <list>
 
 #include <iostream>
 
@@ -331,10 +332,80 @@ std::string WGraph::minCostTree(char start)
   // create a ostringstream for output
   std::ostringstream out;
   // create the stack
-  std::vector<Edge *> mc;
+  std::list<Edge *> edges;
   // find location of first node
   int nodeLocation = findNode(start);
   Node *ptr = (nodeLocation > -1) ? nodeList[nodeLocation] : nullptr;
-  //for(Edge *edge = ptr->connects; edge; edge = edge->next)
+  if(!ptr) return "";
+  // mark starting node as visited and add all its edges to PQueue
+  ptr->visited = true;
+  for(Edge *edge = ptr->connects; edge; edge = edge->next)
+  {
+    edges.push_back(edge);
+  }
+  // while PQueue not empty
+  while(!edges.empty())
+  {
+    // get and remove shortest edge
+    Edge *shortest = getShortestEdge(edges);
+    edges.remove(shortest);
+    // set current to destination of that path
+    ptr = nodeList[shortest->endIndex];
+
+    // foreach edge starting at current
+    for(Edge *edge = ptr->connects; edge; edge = edge->next)
+    {
+      // if edge->otherEnd is non-visited
+      if(nodeList[edge->endIndex]->visited == false)
+      {
+        std::cout << "from check if visited" << std::endl;
+        // if any edges in PQueue terminate at otherEnd 
+        Edge *match = ifEndMatch(edge, edges);
+        if(match)
+        {
+          std::cout << "from check for match" << std::endl;
+          // if the edge already in PQueue is longer
+          if(match->weight > edge->weight)
+          {
+            // delete the old edge
+            std::cout << "from check for longer" << std::endl;
+            edges.remove(match);
+            // add the new edge
+            edges.push_back(edge);
+          }
+        }
+        // process otherEnd (depending on algorithm)
+        out << nodeList[edge->endIndex]->name << "-" << ptr->name << " ";
+        // mark otherEnd as visited
+        nodeList[edge->endIndex]->visited = true;
+      }
+    }
+  }
+  // reset all nodes to not visited
+  resetVisited();
   return out.str();
+}
+
+Edge *WGraph::getShortestEdge(std::list<Edge *> &edges)
+{
+  Edge *shortest = edges.front();
+  for(auto const &e : edges)
+  {
+    if(e->weight < shortest->weight)
+    {
+      shortest = e;
+    }
+  }
+  return shortest;
+}
+
+Edge *WGraph::ifEndMatch(Edge const *edge, std::list<Edge *> const &edges)
+{
+  for(auto const &e : edges)
+  {
+    if(&edge == &e) {
+      return e;
+    }
+  }
+  return nullptr;
 }

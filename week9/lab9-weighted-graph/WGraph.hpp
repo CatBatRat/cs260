@@ -10,6 +10,7 @@
 #define WGRAPH_H
 
 #include <string>
+#include <list>
 
 struct Edge
 {
@@ -50,6 +51,8 @@ class WGraph
         int edgeMatrix[SIZE][SIZE];
 
         int findNode(char name);
+        Edge *getShortestEdge(std::list<Edge *> &edges);
+        Edge *ifEndMatch(Edge const *edge, std::list<Edge *> const &edges);
         void resetVisited();
 };
 

@@ -113,11 +113,13 @@ bool WGraph::addWEdge(char starts, char ends, int weight)
 
   // create two new edges (one for each direction)
   // and add one to each nodes list of edges
+  // each end also knows where it came from so
+  // when working with edges it is easy to get
+  // the source node when traversing
   Edge *startEnd = new Edge;
   startEnd->startIndex = startIndex;
   startEnd->endIndex = endIndex;
   startEnd->weight = weight;
-  startEnd->next = nullptr;
   startEnd->next = nodeList[startIndex]->connects;
   nodeList[startIndex]->connects = startEnd;
 
@@ -125,7 +127,6 @@ bool WGraph::addWEdge(char starts, char ends, int weight)
   endStart->startIndex = endIndex;
   endStart->endIndex = startIndex;
   endStart->weight = weight;
-  endStart->next = nullptr;
   endStart->next = nodeList[endIndex]->connects;
   nodeList[endIndex]->connects = endStart;
 
@@ -329,15 +330,20 @@ std::string WGraph::depthFirst(char start)
 
 std::string WGraph::minCostTree(char start)
 {
+  // create a ostringstream for output
   std::ostringstream out;
+  // create a stack to act as a priority queue
   std::list<Edge *> mct;
-  Node *ptr = nodeList[findNode(start)];
+  int loc = findNode(start);
+  // check if node was found before continuing
+  Node *ptr = (loc > -1) ? nodeList[loc] : nullptr;
+  if(!ptr) return "Provided node does not exist.";
   ptr->visited = true;
   for (Edge *edge = ptr->connects; edge; edge = edge->next)
   {
     mct.push_back(edge);
   }
-  while (mct.size())
+  while (!mct.empty())
   {
     Edge *shortest = getShortestEdge(mct);
     ptr = nodeList[shortest->endIndex];

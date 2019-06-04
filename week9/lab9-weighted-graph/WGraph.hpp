@@ -14,6 +14,7 @@
 
 struct Edge
 {
+    int startIndex;
     int endIndex;
     int weight;
     Edge * next;
@@ -52,7 +53,7 @@ class WGraph
 
         int findNode(char name);
         Edge *getShortestEdge(std::list<Edge *> &edges);
-        Edge *ifEndMatch(Edge const *edge, std::list<Edge *> const &edges);
+        void addQueue(Edge *edge, std::list<Edge *> &edges);
         void resetVisited();
 };
 

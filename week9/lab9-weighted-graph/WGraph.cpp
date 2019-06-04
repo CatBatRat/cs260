@@ -27,6 +27,7 @@
  *
 struct Edge
 {
+    int startIndex;
     int endIndex;
     Edge * next;
 };
@@ -113,6 +114,7 @@ bool WGraph::addWEdge(char starts, char ends, int weight)
   // create two new edges (one for each direction)
   // and add one to each nodes list of edges
   Edge *startEnd = new Edge;
+  startEnd->startIndex = startIndex;
   startEnd->endIndex = endIndex;
   startEnd->weight = weight;
   startEnd->next = nullptr;
@@ -120,6 +122,7 @@ bool WGraph::addWEdge(char starts, char ends, int weight)
   nodeList[startIndex]->connects = startEnd;
 
   Edge *endStart = new Edge;
+  endStart->startIndex = endIndex;
   endStart->endIndex = startIndex;
   endStart->weight = weight;
   endStart->next = nullptr;
@@ -239,7 +242,6 @@ std::string WGraph::breadthFirst(char start)
   out << "Breadth First Traversal starting at " << start << "\n";
   // input data from first node to the string ouput object
   out << ptr->name << " :";
-  Edge *edge = nullptr;
   // while the queue is not empty
   while (!bf.empty())
   {
@@ -248,8 +250,7 @@ std::string WGraph::breadthFirst(char start)
     // pop item from the queue
     bf.pop();
     // pointer to link list of edges connecting to this node
-    //edge = ptr->connects;
-    //while (edge)
+    for (Edge *edge = ptr->connects; edge; edge = edge->next)
     {
       // next node in graph using index from `connects` to find
       // corisponding node in nodeList
@@ -265,7 +266,6 @@ std::string WGraph::breadthFirst(char start)
         bf.push(ptr);
       }
       // next connected edge
-      edge = edge->next;
     }
   }
   // reset all not visisted
@@ -273,7 +273,7 @@ std::string WGraph::breadthFirst(char start)
   return out.str();
 }
 
- std::string WGraph::depthFirst(char start)
+std::string WGraph::depthFirst(char start)
 {
   // create a ostringstream for output
   std::ostringstream out;
@@ -303,7 +303,7 @@ std::string WGraph::breadthFirst(char start)
     // pop top item from the stack
     df.pop();
     // pointer to link list of edges connecting to this node
-    for(Edge *edge = ptr->connects; edge; edge = edge->next)
+    for (Edge *edge = ptr->connects; edge; edge = edge->next)
     {
       // next node in graph using index from connects to find
       // corisponding node in nodeList
@@ -329,59 +329,25 @@ std::string WGraph::breadthFirst(char start)
 
 std::string WGraph::minCostTree(char start)
 {
-  // create a ostringstream for output
   std::ostringstream out;
-  // create the stack
-  std::list<Edge *> edges;
-  // find location of first node
-  int nodeLocation = findNode(start);
-  Node *ptr = (nodeLocation > -1) ? nodeList[nodeLocation] : nullptr;
-  if(!ptr) return "";
-  // mark starting node as visited and add all its edges to PQueue
+  std::list<Edge *> mct;
+  Node *ptr = nodeList[findNode(start)];
   ptr->visited = true;
-  for(Edge *edge = ptr->connects; edge; edge = edge->next)
+  for (Edge *edge = ptr->connects; edge; edge = edge->next)
   {
-    edges.push_back(edge);
+    mct.push_back(edge);
   }
-  // while PQueue not empty
-  while(!edges.empty())
+  while (mct.size())
   {
-    // get and remove shortest edge
-    Edge *shortest = getShortestEdge(edges);
-    edges.remove(shortest);
-    // set current to destination of that path
+    Edge *shortest = getShortestEdge(mct);
     ptr = nodeList[shortest->endIndex];
-
-    // foreach edge starting at current
-    for(Edge *edge = ptr->connects; edge; edge = edge->next)
+    ptr->visited = true;
+    out << nodeList[shortest->startIndex]->name << /*"-" << shortest->weight <<*/ "-" << nodeList[shortest->endIndex]->name << " ";
+    for (Edge *edge = ptr->connects; edge; edge = edge->next)
     {
-      // if edge->otherEnd is non-visited
-      if(nodeList[edge->endIndex]->visited == false)
-      {
-        std::cout << "from check if visited" << std::endl;
-        // if any edges in PQueue terminate at otherEnd 
-        Edge *match = ifEndMatch(edge, edges);
-        if(match)
-        {
-          std::cout << "from check for match" << std::endl;
-          // if the edge already in PQueue is longer
-          if(match->weight > edge->weight)
-          {
-            // delete the old edge
-            std::cout << "from check for longer" << std::endl;
-            edges.remove(match);
-            // add the new edge
-            edges.push_back(edge);
-          }
-        }
-        // process otherEnd (depending on algorithm)
-        out << nodeList[edge->endIndex]->name << "-" << ptr->name << " ";
-        // mark otherEnd as visited
-        nodeList[edge->endIndex]->visited = true;
-      }
+      addQueue(edge, mct);
     }
   }
-  // reset all nodes to not visited
   resetVisited();
   return out.str();
 }
@@ -389,23 +355,33 @@ std::string WGraph::minCostTree(char start)
 Edge *WGraph::getShortestEdge(std::list<Edge *> &edges)
 {
   Edge *shortest = edges.front();
-  for(auto const &e : edges)
+  for (auto const &e : edges)
   {
-    if(e->weight < shortest->weight)
+    if (e->weight < shortest->weight)
     {
       shortest = e;
     }
   }
+  edges.remove(shortest);
   return shortest;
 }
 
-Edge *WGraph::ifEndMatch(Edge const *edge, std::list<Edge *> const &edges)
+void WGraph::addQueue(Edge *edge, std::list<Edge *> &edges)
 {
-  for(auto const &e : edges)
+  if (nodeList[edge->endIndex]->visited == false)
   {
-    if(&edge == &e) {
-      return e;
+    for (auto &old : edges)
+    {
+      if (edge->endIndex == old->endIndex)
+      {
+        if (edge->weight < old->weight)
+        {
+          old = edge;
+          return;
+        }
+      }
     }
+    edges.push_front(edge);
+    return;
   }
-  return nullptr;
 }

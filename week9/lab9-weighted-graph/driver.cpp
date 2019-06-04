@@ -55,6 +55,7 @@ int main()
     cout << tree.minCostTree('Q') << endl;
 
     cout << tree.depthFirst('Q') << endl;
+    cout << tree.breadthFirst('Q') << endl;
 
     return 0;
 }
